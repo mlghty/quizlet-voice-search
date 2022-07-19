@@ -1,0 +1,311 @@
+Questions,Answers
+A _______ address is an internetwork address with universal jurisdiction.,logical
+The logical addresses in the TCP/IP protocol suite are called _______addresses.,IP
+A ________ is a local address. Its jurisdiction is over a local network.,physical
+"If the sender is a host and wants to send a packet to another host on the same network, the logical address that must be mapped to a physical address is ______.",the destination IP address in the datagram header
+"If the sender is a host and wants to send a packet to another host on another network, the logical address that must be mapped to a physical address is ______.",the IP address of the router found in the routing table
+The sender is a router that has received a datagram destined for a host on another network. The logical address that must be mapped to a physical address is ______.,the IP address of the router found in the routing table
+The sender is a router that has received a datagram destined for a host in the same network. The logical address that must be mapped to a physical address is ______.,the destination IP address in the datagram header
+"In _______, a table associating a logical address with a physical address is updated manually.",static mapping
+The target hardware address on an Ethernet is _______ in an ARP request.,0x000000000000
+An ARP reply is normally _______.,unicast
+An ARP request is normally _______.,broadcast
+A technique called ______ is used to create a subnetting effect.,proxy ARP
+A _______ is an ARP that acts on behalf of a set of hosts.,proxy ARP
+,
+,
+,
+"For purposes of routing, the Internet is divided into ___________.",autonomous systems
+Routing inside an autonomous system is referred to as ________ routing.,intradomain
+Routing between autonomous systems is referred to as ______ routing.,interdomain routing
+"In _______ routing, the least cost route between any two nodes is the route with the minimum distance.",distance vector
+"In ________, each node maintains a vector (table) of minimum distances to every node.",distance vector
+"In distance vector routing, each node periodically shares its routing table with _________ and whenever there is a change.",its immediate neighbors
+The Routing Information Protocol (RIP) is an intradomain routing based on _________ routing.,distance vector
+The metric used by _______ is the hop count.,RIP
+"In RIP, the ________ timer controls the advertising of regular update messages.",periodic
+"In RIP, the ________ timer is used to purge invalid routes from the table.",garbage collection
+"In RIP, the ________ timer controls the validity of the route.",expiration
+RIP uses the services of _______.,UDP
+The _________ routing uses the Dijkstra algorithm to build a routing table.,link state
+The Open Shortest Path First (OSPF) protocol is an intradomain routing protocol based on _______ routing.,link state
+"The _______ protocol allows the administrator to assign a cost, called the metric, to each route.",OSPF
+"In OSPF, a ________ link connects two routers without any other host or router in between.",point-to-point
+"In OSPF, a _______ link is a network with several routers attached to it.",transient
+"In OSPF, a ________ link is a network is connected to only one router.",stub
+"In OSPF, when the link between two routers is broken, the administration may create a _________ link between them using a longer path that probably goes through several routers.",None of the choices are correct
+"In OSPF, a ________ defines the links of a true router.",router link
+"In OSPF, a ________ defines the links of a network.",network link
+"In OSPF, an area border router advertises a ____________ LSA.",summary link to network
+OSPF uses the _______ message to create neighborhood relationships and to test the reachability of neighbors.,None of the choices are correct
+"In OSPF, the ________ message does not contain complete database information? it only gives an outline, the title of each line in the database.",database description
+"In OSPF, a _________ message is sent by a router that needs information about a specific route or routes.",link state request
+"In ________ routing, we assume that there is one node (or more) in each autonomous system that acts on behalf of the entire autonomous system.",path vector
+___________ is an interdomain routing protocol using path vector routing.,BGP
+BGP can have two types of sessions: _______ and ________ sessions.,E-BGP? I-BGP
+"To create a neighborhood relationship, a router running BGP sends a(n) ________ message.",open
+"In BGP, the _______ message is used by a router to withdraw destinations that have been advertised previously, or to announce a route to a new destination, or both.",update
+The routers running the BGP protocols exchange _______ messages regularly to tell each other that they are alive.,keepalive
+"In BGP, a(n) _______ message is sent by a router whenever an error condition is detected or a router wants to close the connection.",None of the choices are correct
+BGP messages are encapsulated in _______.,TCP segments
+An area is _______.16:51,part of an AS
+,
+,
+,
+UDP is called a ________________transport protocol.,"connectionless, unreliable"
+UDP does not add anything to the services of IP except for providing _______ communication.,process-to-process
+UDP is an acronym for _______.,User Datagram Protocol
+"The local host and the remote host are defined using IP addresses. To define the processes, we need second identifiers called ____________ .",port addresses
+"The ports ranging from 0 to 1,023 are assigned and controlled by ICANN. These are the ___________ ports.",well-known
+"The ports ranging from 1,024 to 49,151 are called ___________ ports.",registered
+"The ports ranging from 49,152 to 65,535 can be used as temporary or private port numbers. They are called the ________ ports.",dynamic
+"In the sending computer, UDP receives a data unit from the _______ layer.",application
+"In the sending computer, UDP sends a data unit to the _______ layer.",IP
+UDP and TCP are both _______ layer protocols.,transport
+Which of the following functions does UDP perform?,process-to-process communication
+"When the IP layer of a receiving host receives a datagram, _______.",a transport layer protocol takes over
+UDP needs the _______ address to deliver the user datagram to the correct application process.,port
+A port address in UDP is _______ bits long.,16
+Which of the following does UDP guarantee?,None of the choices are correct
+The source port address on the UDP user datagram header defines _______.,the process running on the sending computer
+The combination of an IP address and a port number is called a ____________.,socket address
+"To use the services of UDP, we need ________ socket addresses.",two
+UDP packets are called __________ .,user datagrams
+UDP packets have a fixed-size header of _______ bytes.,8
+UDP packets are encapsulated in ___________ .,an IP datagram
+UDP uses ________ to handle outgoing user datagrams from multiple processes on one host.,multiplexing
+UDP uses _______ to handle incoming user datagrams that go to different processes on the same host.,demultiplexing
+,
+,
+,
+TCP is a __________protocol.,stream-oriented
+TCP groups a number of bytes together into a packet called a ___________.,segment
+TCP is a(n) ___________ protocol.,connection-oriented
+TCP is a(n) _______ transport protocol.,reliable
+TCP uses _________________ to check the safe and sound arrival of data.,an acknowledgment mechanism
+The bytes of data being transferred in each connection are numbered by TCP. The numbering starts with a __________________.,randomly generated number
+TCP assigns a sequence number to each segment that is being sent. The sequence number for each segment is the number of the _______ byte carried in that segment.,first
+Communication in TCP is ___________.,full-duplex
+The value of the acknowledgment field in a segment defines the sequence number related to the ______byte a party expects to receive.,next
+The inclusion of the checksum in the TCP segment is ________.,mandatory
+A TCP segment is encapsulated in __________.,an IP datagram
+A SYN segment cannot carry data? it consumes _____ sequence number(s).,one
+A SYN + ACK segment cannot carry data? it consumes _____ sequence numbers.,None of the choices are correct
+"An ACK segment, if carrying no data, consumes ______ sequence number(s).",no
+The connection establishment procedure in TCP is susceptible to a serious security problem called the _________ attack.,SYN flooding
+The SYN flooding attack belongs to a group of security attacks known as a _____ attack.,denial of service
+The FIN segment consumes ____ sequence numbers if it does not carry data.,None of the choices are correct
+The FIN + ACK segment consumes _____ sequence number(s) if it does not carry data.,one
+"In TCP, one end can stop sending data while still receiving data. This is called a ______.",half-close
+A(n) _________ machine is a machine that goes through a limited number of states.,finite state
+A common value for MSL is between___ seconds and ___ minute(s).,30:01:00
+"To accomplish flow control, TCP uses a ___________ window protocol.",sliding
+TCP sliding windows are __________ oriented.,byte
+"In TCP, the size of the send window is the ________ of rwnd and cwnd.",minimum
+"In TCP, the window should not be _________.",shrunk
+"In TCP, the receiver can temporarily shut down the window; the sender, however, can always send a segment of _____ byte(s) after the window is shut down.",one
+"A serious problem can arise in the sliding window operation when either the sending application program creates data slowly or the receiving application program consumes data slowly, or both. This problem is called the ______.",silly window syndrome
+Nagle's algorithm can solve the silly window syndrome created by the _________.,sender
+Clark's solution can solve the silly window syndrome created by the _________.,receiver
+Delayed acknowledgment can solve the silly window syndrome created by the _________.,receiver
+ACK segments consume _______ sequence number(s) and _______ acknowledged.,no? are not
+"In modern implementations of TCP, a retransmission occurs if the retransmission timer expires or ________ duplicate ACK segments have arrived.",three
+"In TCP, ________ retransmission timer is set for an ACK segment.",no
+Lost acknowledgments may create a _______ if they are not handled properly.,deadlock
+In the ________ algorithm the size of the congestion window increases exponentially until it reaches a threshold.,slow start
+In the __________ algorithm the size of the congestion window increases additively until congestion is detected.,congestion avoidance
+"In the congestion detection algorithm, if detection is by a time-out, a new _______ phase starts.",slow start
+"In the congestion detection algorithm, if detection is by three ACKs, a new _______ phase starts.",congestion avoidance
+"In TCP, there can be ______ RTT measurement(s) in progress at any time.",only one
+The value of the window scale factor can be determined during __________.,connection establishment
+Multiply the header length field by _______ to find the total number of bytes in the TCP header.,4
+Urgent data requires the urgent pointer field as well as the URG bit in the _______ field.,control
+The options field of the TCP header ranges from 0 to _______ bytes.,40
+Which option defines the maximum number of bytes in a TCP segment?,maximum segment size
+"If the ACK value is 200, then byte _______ has been received successfully.",199
+The _______ timer prevents a long idle connection between two TCPs.,keepalive
+The _______ timer is needed to handle the zero window-size advertisement.,persistence
+Karn's algorithm is used in calculations by the _______ timer.,retransmission
+A special segment called a probe is sent by a sending TCP when the _______ timer goes off.,persistence
+,
+,
+,
+An IPv6 address is _________ bits long.,128
+An IPv6 address consists of ________ bytes (octets)?,16
+"To make addresses more readable, IPv6 specifies ____________notation.",hexadecimal colon
+"In hexadecimal colon notation, a 128-bit address is divided into _______ sections, each _____ hexadecimal digits in length.",8;4
+An IPv6 address can have up to __________ colons.,7
+An IPv6 address can have up to __________ hexadecimal digits.,32
+"If an IPv6 address has digits of ________, we can abbreviate the address.",0s
+"In IPv6, _______ address defines a single computer.",a unicast
+_________ address defines a group of computers.,A multicast
+"In IPv6, the___________ address is generally used by a normal host as a unicast address.",provider-based unicast
+"A _________ address comprises 80 bits of zero, followed by 16 bits of one, followed by the 32-bit IPv4 address.",mapped
+A ___________ address is an address of 96 bits of zero followed by 32 bits of IPv4 address.,None of the choices are correct
+,
+,
+,
+The ________ protocol is the transmission mechanism used by the TCP/IP suite.,IP
+IP is _________ datagram protocol.,both unreliable and connectionless
+"The term ________ means that IP provides no error checking or tracking. IP assumes the unreliability of the underlying layers and does its best to get a transmission through to its destination, but with no guarantees.",best-effort delivery
+A best-effort delivery service such as IP includes _______.,None of the choices are correct
+An HLEN value of decimal 10 means _______.,there are 40 bytes in the header
+"If the fragment offset has a value of 100, it means that _______.",the first byte of the datagram is byte 800
+What is needed to determine the number of the last byte of a fragment?,both offset number and the total length
+The IP header size _______.,is 20 to 60 bytes long
+Packets in the IP layer are called _________.,datagrams
+The total length field defines the total length of the datagram _________.,including the header
+"When a datagram is encapsulated in a frame, the total size of the datagram must be less than the _______.",MTU
+Which IP option is used if exactly four specific routers are to be visited by the datagram?,strict source route
+"For the timestamp option, a flag value of _______ means that each visited router adds only the timestamp in the provided field.",0
+The IP header field formerly known as the service type field is now called the _______ field.,differentiated services
+The _______ module takes fragments of a message and puts them back in order.,reassembly
+"The _______ module sends out an IP packet, the next-hop address, and interface information.",forwarding
+The _______ module discards datagrams with a TTL value of zero.,processing
+The output of the _______ module is an IP packet destined for an upperlayer protocol.,reassembly
+The _______ module consults the MTU table to determine the packet size necessary for transmission.,fragmentation
+The value of the ________ subfield in an option controls the presence of the option in fragmentation.,copy
+The value of the ________ subfield defines the general purpose of an option.,class
+The value of the ________ subfield defines the types of an option.,number
+Only ______ end of option option can be used in a datagram.,one
+"When we use IP over ATM, only the ________ cell carry(ies) the 8-byte trailer added to the IP datagram.",last
+"When we use IP over ATM, padding can be added only to the _____ or the _______.",last cell? last two cells
+"To find the physical address of the exiting-point router, ATM uses the services of _________.",ATMARP
+The inverse request and inverse reply messages can bind the physical address to an IP address in a(n) _______ situation.,PVC
+The request and reply message can be used to bind a physical address to an IP address in a(n) _______ situation.,S V C
+__________ allows an ATM network to be divided into several logical subnets.,LIS
+,
+,
+,
+ICMP is a _________ layer protocol.,network
+An ICMP message has _____ header and a variable-size data section.,an 8-byte
+Which of the following is true about ICMP messages?,none is true
+Which of the following is true about ICMP messages?,An ICMP error message may be generated only for the first fragment.
+Which of the following is true about ICMP messages?,No ICMP error message will be generated for a datagram having a special address such as 127.0.0.0 or 0.0.0.0.
+"If a host needs to synchronize its clock with another host, it sends a _______ message.",timestamp-request
+The purpose of echo request and echo reply is to _______.,check node-to-node communication
+In error reporting the encapsulated ICMP packet goes to _______.,the original sender
+"What field uniquely identifies the kind of ICMP message (for example, echo reply versus echo request)?",type
+"When the hop-count field reaches zero and the destination has not been reached, a _______ error message is sent.",time-exceeded
+"When all fragments of a message have not been received within the designated amount of time, a _______ error message is sent.",time-exceeded
+Errors in the header or option fields of an IP datagram require a _______ error message.,parameter-problem
+A _______ can learn about network _______ by sending out a routersolicitation packet.,"host, routers"
+Who can send ICMP error-reporting messages?,routers or destination hosts
+One method to alert a source host of congestion is the _______ message.,source-quench
+A time-exceeded message is generated if _______.,the round-trip time between hosts is close to zero and fragments of a message do not arrive within a set time
+"To determine whether or not a node is reachable, _______ message can be sent.",an echo-request
+"In calculating the time difference between two clocks, a negative value indicates _______.",the destination clock lags behind the source clock
+An IP datagram (datagram A) cannot reach its destination. An ICMP error message is sent to the source. The data field of the IP datagram (datagram B) that encapsulates the ICMP packet contains _______.,the ICMP header plus 8 bytes of datagram A
+,
+,
+,
+DHCP is a client/server protocol designed to provide ________ of information for a diskless computer or a computer that is booted for the first time.,four pieces
+The DHCP client and server can be on _______.,the same or different networks
+"If DHCP client and server are on different networks, there is a need for an intermediary called a _______.",relay agent
+"In DHCP, the client uses ________ port and the server uses _________port.",a well-known? a well-known
+"In DHCP, the server uses the well-known port _______? the client uses the well-known port _______.",67? 68
+"In DHCP, the client often needs to use ________ to obtain the complete information it needs.",TFTP
+DHCP uses the services of _______.,UDP
+DHCP can be configured ___________.,manually or automatically
+DHCP client can be in one of ___________ states.,6
+"When the DHCP client first starts, it is in the _______ state.",init
+"After sending the DHCPDISCOVER message, the client goes to the _______ state.",selecting
+The default lease time of an IP address offer is ________.,1 hour
+"After the selecting state, a DHCP client can go to the ________state.",requesting
+"After the rebinding state, a DHCP client can go to the __________ state.",init and bound
+"After the bound state, a DHCP client can go to the __________ state.",renewing
+"After the renewing state, a DHCP client can go to the __________ state.",rebinding
+,
+,
+,
+One of the main duties of the transport layer is ____________ communication.,process-to-process
+The client program normally uses ____________ port number.,an ephemeral
+The server program normally uses __________ port number.,a well-known
+A socket address is a combination of __________.,None of the choices are correct
+______________ means accepting items from more than one source.,Multiplexing
+______________ means delivering items to more than one source.,Demultiplexing
+_________ means the producer delivers the items when they are produced without waiting for the request from the consumer.,Pushing
+_________ means the consumer takes the items when it is ready to do so.,Pulling
+"In the stop-and-wait protocol, the send window size is ______ and the receive window size is _______ where n is related to the number of bits in the sequence.","1, 1"
+"In the go-back-N protocol, the send window size is ______ and the receive window size is _______, where n is related to the number of bits in the sequence. number.","n, 1"
+"In the selective-repeat protocol, the send window size is ______ and the receive window size is _______, where n is related to the number of bits in the sequence.","n, n"
+,
+,
+,
+SNMP defines the ___________________ to be sent from a manager to an agent and vice versa.,format of the packets
+A manager is a host that runs the SNMP _______ process.,client
+An agent is a host or computer that runs the SNMP _______ process.,server
+SNMP uses two other protocols: _______ and _________.,SMI? MIB
+"________ defines the general rules for naming objects, defining object types, and showing how to encode objects and values.",SMI
+"__________ creates a collection of named objects, their types, and their relationships to each other in an entity to be managed.",SMI
+We can compare the task of network management to the task of writing a program. Both tasks need rules. In network management this is handled by ___________.,SMI
+We can compare the task of network management to the task of writing a program. Both tasks need variable declarations. In network management this is handled by _________.,MIB
+We can compare the task of network management to the task of writing a program. Both tasks have actions performed by statements. In network management this is handled by _______.,SMNP
+"SMI emphasizes three attributes to handle an object: _____, ________, and _________.",name? data type? encoding method
+"To name objects globally, SMI uses an object identifier, which is a hierarchical identifier based on a _______ structure",tree
+All objects managed by SNMP are given an object identifier. The object identifier always starts with _______.,1.3.6.1.2.1
+"To define the data type, SMI uses fundamental _______ definitions and adds some new definitions.",ASN.1
+SMI has two broad categories of data type: _______ and _______.,simple? structured
+The _______ data types are atomic data types.,simple
+SMI defines two structured data types: ________ and _________.,sequence? a sequence of
+"SMI uses another standard, ___________, to encode data to be transmitted over the network.",BER
+The _________ ordering enables a manager to access a set of variables one after another by defining the first variable.,lexicographic
+The GetRequest PDU is sent from the _______ to the __________ to retrieve the value of a variable or a set of variables.,client? server
+The Response PDU is sent from the ______ to the ______ in response to GetRequest or GetNextRequest.,server? client
+The Trap PDU is sent from the ______ to the _______ to report an event.,server? client
+"SNMP uses the services of UDP on two well-known ports, _______ and _______.",161? 162
+_______ runs the SNMP client program? _______ runs the SNMP server program.,A manager? an agent
+"INTEGER, OCTET STRING, and ObjectIdentifier are _______ definitions used by SMI.",ASN.1
+Which of the following could be a legitimate MIB object identifier?,1.3.6.1.2.1.1
+"For a 1-byte length field, what is the maximum value for the data length?",127
+An object id defines a _______. Add a zero suffix to define the _______.,variable? variable contents
+An SNMP agent can send _______ messages.,Trap
+An SNMP agent can send _______ messages.,Response
+The _______ field in the SNMP PDU is an offset that points to the variable in error.,error index
+The _______ field in the SNMP PDU reports an error in a response message.,error status
+The _______ field in the SNMP PDU consists of a sequence of variables and their corresponding values.,VarBindList
+,
+,
+,
+"In IPv6, options are inserted between the _________ and the ___________ data.",base header? upper-layer data
+IPv6 allows _________ security provisions than IPv4.,more
+Which of the following is a necessary part of the IPv6 header?,base header
+The _______ field in the base header restricts the lifetime of a datagram.,hop limit
+"When a datagram needs to be discarded in a congested network, the decision is based on the _______ field in the base header.",priority
+The _______ field in the base header and the sender IP address combine to indicate a unique path identifier for a specific flow of data.,flow label
+"In the _______ extension header, the destination address changes from router to router.",source routing
+Which of the following is one of the transition strategies?,all of the above
+"When two computers using IPv6 want to communicate but the packet must pass through an IPv4 region, which transition strategy should be used?",tunneling
+"When the majority of the Internet has moved to the IPv6 but some still use IPv4, which transition strategy should be used?",header translation
+,
+,
+,
+"In __________cryptography, the same key is used by the sender (for
+encryption) and the receiver (for decryption).",symmetric-key
+"In _________ cryptography, the same key is used in both directions.",symmetric-key
+_________ cryptography is often used for long messages.,Symmetric-key
+___________ cryptography is often used for short messages.,Asymmetric-key
+__________means that the sender and the receiver expect confidentiality.,None of the choices are correct
+___________ means that the data must arrive at the receiver exactly as they were sent.,Message integrity
+______________ means that the receiver needs to be sure of the sender identity and that an imposter has not sent the message.,Message authentication
+"______________ can provide authentication, integrity, and nonrepudiation for a message.",Digital signature
+Digital signature does not provide _________.,privacy
+"In ___________, the entity identity is verified once for the entire duration of system access.",entity authentication
+"In __________ cryptography, everyone has access to everyone's public key.",asymmetric-key
+"After a message is encrypted, it is called _______.",ciphertext
+"If 20 people need to communicate using symmetric-key cryptography, _______ symmetric keys are needed.",190
+"In the asymmetric-key method of cryptography, which key is publicly known?",encryption key only
+"In the asymmetric-key method of cryptography, the receiver has possession of the _______.",private key
+The RSA algorithm uses _______ cryptography method.,an asymmetric-key
+"If user A wants to send an encrypted message to user B, the plaintext is encrypted with the public key of _______.",user B
+"In the digital signature technique when the whole message is signed using an asymmetric key, the sender of the message uses _______ to sign the message.",his or her own private key
+"In the digital signature technique when the whole message is signed using an asymmetric key, the receiver of the message uses _______ to verify the signature.",the sender's public key
+A _______ is a trusted third party that solves the problem of symmetrickey distribution.,KDC
+A _______ certifies the binding between a public key and its owner.,C A
+,
+,
+,
+class A,0-127
+class B,128-191
+class C,192-223
+class D,224-239
